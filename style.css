@@ -3,14 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-body
-{
-    background: linear-gradient(to right,rgb(255,255,255),rgb(211, 186, 159));
+
+body {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(211, 186, 159));
+    width: 100%;
+    height: 100%;
 }
 
 main {
     height: 100%;
-    position:absolute;
+    width: 100%;
 }
 
 section {
@@ -38,46 +40,39 @@ img {
     transition: 0.2s ease-in-out;
 }
 
-img:hover
-{
+img:hover {
     transform: scale(0.8);
 }
 
-.social-links
-{
+.social-links {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.social-links a
-{
+.social-links a {
     margin: 10px 15px;
     font-size: 30px;
     transition: 0.4s;
 }
 
-.social-links a:hover
-{
+.social-links a:hover {
     transform: scale(0.9);
     color: black;
 }
 
 
-span
-{
+span {
     color: rgb(109, 67, 0);
     text-shadow: 0 0 10px rgb(100, 60, 60);
 }
 
-.typewriter
-{
+.typewriter {
     font-weight: 600;
     font-size: 1.6rem;
 }
 
-.typewriter span
-{
+.typewriter span {
     color: rgb(109, 67, 0);
     text-shadow: 0 0 10px rgb(100, 60, 60);
     position: relative;
@@ -85,14 +80,12 @@ span
     transition: 0.3s linear;
 }
 
-.typewriter span::before
-{
+.typewriter span::before {
     content: "Devellopeur Web";
     animation: words 6s infinite;
 }
 
-.typewriter span::after
-{
+.typewriter span::after {
     content: "";
     position: absolute;
     height: 100%;
@@ -105,27 +98,29 @@ span
 }
 
 @keyframes cursor {
-    to
-    {
+    to {
         border-left: 3px solid rgb(179, 129, 65);
     }
-    
+
 }
 
 @keyframes words {
-    0%,33%
-    {
+
+    0%,
+    33% {
         content: "Devellopeur Web";
     }
-    34%,66%
-    {
+
+    34%,
+    66% {
         content: "Mathematicien";
     }
-    67%,100%
-    {
+
+    67%,
+    100% {
         content: "Statisticien";
     }
-    
+
 }
 
 
@@ -138,22 +133,56 @@ span
         visibility: visible;
     }
 
-    main {
+    body {
+        font-size: 10px;
+    }
+
+    .typewriter span {
+        font-size: 0.8rem;
+    }
+
+    .typewriter {
+        font-size: 1rem;
+    }
+
+    h1 span {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        align-self: center;
+    }
+
+
+    img {
         margin-top: 60px;
-        height: 100%;
-        width: 100%;
-        position: relative;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    img {
+        width: 200px;
+        height: 200px;
+        margin-top: 60px;
     }
 
     section {
         margin-top: 5%;
-        padding: 10%;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
 
 }
