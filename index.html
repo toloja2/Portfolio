@@ -14,13 +14,18 @@
 
 <body>
     <script src="./bootstrap.bundle.js"></script>
+    <script src="./main.js"></script>
+
 
     <nav class="navbar bg-body-tertiary fixed-top ">
         <div class="container-fluid col-8">
-            <button type="button" class="btn btn-outline-primary"><a class="nav-link" href="#">Home</a></button>
-            <button type="button" class="btn btn-outline-primary"><a class="nav-link" href="#">About</a></button>
-            <button type="button" class="btn btn-outline-primary"><a class="nav-link" href="#">See CV</a></button>
-            <button type="button" class="btn btn-outline-primary"><a class="nav-link" href="#">Contact</a></button>
+            <button type="button" class="btn btn-outline-primary" onclick="homeSection()"><a class="nav-link"
+                    href="#">Home</a></button>
+            <button type="button" class="btn btn-outline-primary" onclick="return aboutSection()"><a class="nav-link"
+                    href="#">A propos</a></button>
+            <button type="button" class="btn btn-outline-primary" onclick="return seeCvSection()"><a class="nav-link"
+                    href="#">Voir CV</a></button>
+            <button type="button" class="btn btn-outline-primary" onclick="return contactSection()">Contact</button>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -33,20 +38,22 @@
             </div>
             <div class="offcanvas-body">
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button type="button" class="btn btn-outline-primary"><a class="nav-link" href="#">Home</a></button>
-                    <button type="button" class="btn btn-outline-primary"><a class="nav-link"
-                            href="#">About</a></button>
-                    <button type="button" class="btn btn-outline-primary"><a class="nav-link" href="#">See
+                    <button type="button" class="btn btn-outline-primary" onclick="homeSection()"><a class="nav-link"
+                            href="#homeSection">Home</a></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="return aboutSection()"><a
+                            class="nav-link" href="#abouSection">A Propos</a></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="return seeCvSection()"><a
+                            class="nav-link" href="#seeCvSection">Voir
                             CV</a></button>
-                    <button type="button" class="btn btn-outline-primary"><a class="nav-link"
-                            href="#">Contact</a></button>
+                    <button type="button" class="btn btn-outline-primary" onclick="return contactSection()"><a
+                            class="nav-link" href="#contactSection">Contact</a></button>
                 </div>
             </div>
         </div>
         </div>
     </nav>
     <main>
-        <section>
+        <section id="homeSection">
             <div class="image">
                 <img src="./Medias/1.jpg" alt="MaPhoto" srcset="">
             </div>
@@ -70,12 +77,62 @@
                 </div>
 
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi labore saepe sint, non, ducimus
-                    maxime, quos atque reprehenderit a aliquam consequuntur sunt deleniti harum possimus qui neque culpa
-                    natus minima?
+                    Etudiant en L3 Mathématiques et Informatique du parcours Probabilité statistique Algèbre Algorithmique et Calcul numérique <strong>P.A.A.C</strong>,
+                    possède de solides compétences en développement web. J'ai aussi des connaissances en <strong>python </strong> avec le framwork <strong>Django</strong>,
+                    alliant rigueur analytique et expertise technique.
+
                 </p>
             </div>
         </section>
+
+        <section id="aboutSection">
+            <h2>Apropos de moi</h2>
+        </section>
+
+        <section id="seeCvSection">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos vel non atque porro harum labore ipsam,
+                cupiditate accusantium corrupti nihil.</p>
+            <button type="button" class="btn btn-outline-primary">
+                <a href="./Medias/toloja.pdf" target="_blank">VOIR CV</a>
+            </button>
+
+        </section>
+
+        <section id="contactSection">
+            <h2>CONTACTEZ - MOI</h2>
+            <div id="sucessMessage">
+                <i class="fas fa-spinner fa-spin"></i>
+                <h5 class="text-danger">Restez connecter s'il vous plait! </h5>
+                <button onclick="reloadPage()">RETOUR</button>
+            </div>
+            <form action="https://formsubmit.co/tolojaranarijaonina@gmail.com" method="POST" enctype="multipart/form-data" id="formulaire" class="w-50">
+
+                <div class="form-floating mb-4">
+                    <input type="text" class="form-control" id="validationTextarea" required name="name"
+                        placeholder="Votre nom">
+                    <label for="validationTextarea">Votre nom</label>
+                </div>
+                
+                <input type="email" name="email" placeholder="exemple@gmail.com" required>
+
+                <div class="form-floating mb-4 mt-4">
+                    <textarea class="form-control "required name="message" placeholder="Mettez votre message ici"
+                        id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Votre message</label>
+                </div>
+
+                <input type="hidden" name="_subject" value="Nouveau message">
+                <input type="hidden" name="_template" value="box">
+                <input type="hidden" name="_captcha" value="false">
+
+                <button type="submit" onclick="return envoyeMessage()"
+                    class="btn btn-primary w-100">Envoyer</button>
+                <!-- <input type="file" name="attachement" accept="image/png,image/jepg">
+                <button type="submit" onclick="return envoyeMessage()">Envoyer</button> -->
+
+            </form>
+        </section>
+
     </main>
 </body>
 

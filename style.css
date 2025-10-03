@@ -6,16 +6,11 @@
 
 body {
     background: linear-gradient(to right, rgb(255, 255, 255), rgb(211, 186, 159));
-    width: 100%;
-    height: 100%;
+
 }
 
-main {
-    height: 100%;
-    width: 100%;
-}
 
-section {
+#homeSection{
     margin-top: 6%;
     padding: 10%;
     display: flex;
@@ -32,7 +27,7 @@ section {
     margin-top: 10px;
 }
 
-img {
+#homeSection img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
@@ -97,6 +92,81 @@ span {
     visibility: hidden;
 }
 
+
+#aboutSection
+{
+    margin-top: 6%;
+    padding: 10%;
+    display: none;
+}
+
+#seeCvSection
+{
+    margin-top: 6%;
+    padding: 10%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contactSection
+{
+    width: 100%;
+    margin-top: 6%;
+    padding: 10%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    
+}
+
+#contactSection h2
+{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0 0 10px rgb(49, 46, 46);
+    letter-spacing: 3px;
+}
+
+#formulaire input
+{
+ width: 100%;
+ border: none;
+ border-radius: 6px;
+ padding: 20px;
+}
+
+#sucessMessage
+{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#sucessMessage button
+{
+    text-decoration: none;
+    font-weight: 600;
+    background-color: rgb(10, 46, 10);
+    color: white;
+    padding: 20px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 0 10px rgb(43, 180, 243);
+    transition: 0.4s ease-in-out;
+}
+
+#sucessMessage button:hover
+{
+    box-shadow: 0 0 10px red;
+    transform: scale(0.8);
+}
+
+
 @keyframes cursor {
     to {
         border-left: 3px solid rgb(179, 129, 65);
@@ -124,7 +194,7 @@ span {
 }
 
 
-@media screen and (max-width:490px) {
+@media screen and (max-width:520px) {
     .container-fluid {
         visibility: hidden;
     }
@@ -157,6 +227,10 @@ span {
 
     img {
         margin-top: 60px;
+    }
+
+    #contactSection, #seeCvSection, #aboutSection{
+        margin-top: 30%;
     }
 
 }
