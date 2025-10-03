@@ -110,10 +110,10 @@
                 <div class="form-floating mb-4">
                     <input type="text" class="form-control" id="validationTextarea" required name="name"
                         placeholder="Votre nom">
-                    <label for="validationTextarea">Votre nom</label>
+                    <label for="validationTextarea">Votre nom et/ou Contact</label>
                 </div>
                 
-                <input type="email" name="email" placeholder="exemple@gmail.com" required>
+                <!-- <input type="email" name="email" placeholder="exemple@gmail.com" > -->
 
                 <div class="form-floating mb-4 mt-4">
                     <textarea class="form-control "required name="message" placeholder="Mettez votre message ici"
@@ -124,6 +124,7 @@
                 <input type="hidden" name="_subject" value="Nouveau message">
                 <input type="hidden" name="_template" value="box">
                 <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://toloja2.github.io/Portfolio">
 
                 <button type="submit" onclick="return envoyeMessage()"
                     class="btn btn-primary w-100">Envoyer</button>
