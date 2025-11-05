@@ -9,9 +9,62 @@ body {
 
 }
 
+header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-#homeSection{
-    margin-top: 6%;
+nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(189, 148, 104, 0.9);
+    position: fixed;
+    backdrop-filter: blur(2px);
+
+}
+
+.logo {
+    color: rgb(28, 34, 9);
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',serif;
+    cursor: pointer;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    gap: 8%;
+    transition: 0.6s ease-in-out;
+}
+
+nav>ul>li {
+    cursor: pointer;
+    color: aliceblue;
+    width: 90px;
+
+}
+
+#bouttonMenu {
+    display: none;
+}
+
+.offancaveMenu {
+    right: 0;
+}
+
+li:hover {
+    color: rgba(181, 219, 219, 0.87);
+    transform: scale(1.08);
+}
+
+#homeSection {
     padding: 10%;
     display: flex;
     justify-content: space-between;
@@ -31,12 +84,12 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    box-shadow: 0 10px 15px rgb(85, 210, 245);
+    box-shadow: 0 3px 10px rgb(85, 210, 245);
     transition: 0.2s ease-in-out;
 }
 
 img:hover {
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 
 .social-links {
@@ -88,58 +141,190 @@ span {
     animation: cursor 0.6s linear infinite;
 }
 
-.navbar-toggler {
-    visibility: hidden;
+
+
+main button:hover,
+header button:hover {
+    transition: 0.3s ease-in-out;
 }
 
-
-#aboutSection
-{
-    margin-top: 6%;
-    padding: 10%;
-    display: none;
+main button:hover,
+header button:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgb(54, 52, 52);
 }
 
-#seeCvSection
-{
-    margin-top: 6%;
-    padding: 10%;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#contactSection
-{
+main {
     width: 100%;
-    margin-top: 6%;
-    padding: 10%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    padding: 10px;
+}
+
+section {
+    box-shadow: 0 2px 5px rgb(54, 52, 52);
+    margin: 20px 0;
+    padding: 5px 2px;
+    height: 410px;
+   
+}
+
+#formations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+#progressBar1 {
+    width: 100%;
+}
+
+#progressBar2 {
+    width: 100%;
     display: none;
+}
+
+.container {
+    width: 100%;
+    padding: 0;
+    background-color: #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.skills {
+    text-align: right;
+    padding: 10px;
+    color: white;
+    margin: 0;
+}
+
+.html {
+    width: 85%;
+    background-color: rgba(34, 118, 214, 0.568);
+    animation: animation1 ease-in-out 3s forwards;
+}
+
+.JavaScript {
+    width: 65%;
+    background-color: rgba(214, 163, 87, 0.753);
+    animation: animation2 ease-in-out 3s forwards;
+}
+
+.React {
+    width: 60%;
+    background-color: rgb(122, 136, 182);
+    animation: animation3 ease-in-out 3s forwards;
+}
+
+.Bootstrap {
+    width: 80%;
+    background-color: rgba(134, 50, 145, 0.842);
+    animation: animation4 ease-in-out 3s forwards;
+}
+
+.Python {
+    width: 70%;
+    background-color: rgb(167, 214, 136);
+    animation: animation5 ease-in-out 3s forwards;
+}
+
+.Django {
+    width: 35%;
+    background-color: rgba(69, 148, 73, 0.685);
+    animation: animation6 ease-in-out 3s forwards;
+}
+
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(189, 148, 104, 0.95);
+    position: fixed;
+    bottom: 0;
+}
+
+footer ul {
+    display: flex;
+    gap: 10px;
+}
+
+footer ul li{
+    cursor: pointer;
+    list-style: none;
+    color: aliceblue;
+}
+
+@keyframes animation4 {
+    0% {
+        width: 0;
+        margin-left: -5%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes animation5 {
+    0% {
+        width: 0;
+        margin-left: -5%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes animation6 {
+    0% {
+        width: 0;
+        margin-left: -5%;
+    }
+
+    100% {
+        width: 35%;
+    }
+}
+
+#contactSection {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    flex-direction: column;
-    
+    margin-bottom: 80px;
 }
 
-#contactSection h2
-{
+form {
+    width: 50%;
+}
+
+h2 {
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    text-shadow: 0 0 10px rgb(49, 46, 46);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow',serif;
+    text-shadow: 0 2px 2px rgb(49, 46, 46);
     letter-spacing: 3px;
 }
 
-#formulaire input
-{
- width: 100%;
- border: none;
- border-radius: 6px;
- padding: 20px;
+#formulaire input {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    padding: 20px;
+
 }
 
-#sucessMessage
-{
+#sucessMessage {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -147,8 +332,7 @@ span {
     gap: 10px;
 }
 
-#sucessMessage button
-{
+#sucessMessage button {
     text-decoration: none;
     font-weight: 600;
     background-color: rgb(10, 46, 10);
@@ -160,8 +344,7 @@ span {
     transition: 0.4s ease-in-out;
 }
 
-#sucessMessage button:hover
-{
+#sucessMessage button:hover {
     box-shadow: 0 0 10px red;
     transform: scale(0.8);
 }
@@ -169,7 +352,7 @@ span {
 
 @keyframes cursor {
     to {
-        border-left: 3px solid rgb(179, 129, 65);
+        border-left: 2px solid rgb(179, 129, 65);
     }
 
 }
@@ -195,16 +378,33 @@ span {
 
 
 @media screen and (max-width:520px) {
-    .container-fluid {
-        visibility: hidden;
-    }
-
-    .navbar-toggler {
-        visibility: visible;
-    }
 
     body {
-        font-size: 10px;
+        font-size: 13px;
+    }
+
+    #bouttonMenu {
+        display: block;
+    }
+
+    nav>ul {
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        height: 40vh;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgba(189, 148, 104, 0.9);
+        right: -100vh;
+    }
+
+    #homeSection img {
+        width: 150px;
+        height: 150px;
+        margin-top: 10%;
     }
 
     .typewriter span {
@@ -226,23 +426,27 @@ span {
 
 
     img {
-        margin-top: 60px;
-    }
-
-    #contactSection, #seeCvSection, #aboutSection{
-        margin-top: 30%;
+        margin-top: 50px;
     }
 
 }
 
 @media screen and (max-width:700px) {
-    img {
+    #homeSection img {
         width: 200px;
         height: 200px;
-        margin-top: 60px;
+        margin-top: 10%;
     }
 
-    section {
+    section{
+        margin-top: 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    #homeSection {
         margin-top: 5%;
         width: 100%;
         display: flex;
@@ -256,6 +460,10 @@ span {
         align-items: center;
         flex-direction: column;
         margin-top: 10px;
+    }
+
+    main {
+        flex-direction: column;
     }
 
 
