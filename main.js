@@ -12,21 +12,22 @@ function vers(id, type) {
 // VOIR MENU CACHE
 const bouttonMenu = document.getElementById('bouttonMenu');
 const navList = document.querySelector('nav>ul');
-bouttonMenu.addEventListener("click",()=>{
+bouttonMenu.addEventListener("click", () => {
     navList.classList.toggle('offancaveMenu');
-    bouttonMenu.firstChild.classList.toggle("fa-close");
+    bouttonMenu.classList.toggle("fa-close");
     document.addEventListener("click", (e) => {
         if (!bouttonMenu.contains(e.target)) {
             navList.classList.remove("offancaveMenu");
-            bouttonMenu.firstChild.classList.replace("fa-close", "fa-bars")
+            bouttonMenu.classList.replace("fa-close", "fa-bars")
         }
-})})
+    })
+})
 
 // Anymation
 const ajoutAnimation = document.getElementById('ajoutAnimation');
 const styleKeyframes = document.createElement("style")
-ajoutAnimation.addEventListener('click',()=>{
-        styleKeyframes.textContent = `@keyframes animation1 {
+ajoutAnimation.addEventListener('click', () => {
+    styleKeyframes.textContent = `@keyframes animation1 {
     0% {
         width: 0;
         margin-left: -5%;
@@ -44,23 +45,22 @@ ajoutAnimation.addEventListener('click',()=>{
     }
 
     100% {
-        width: 65%;
+        width: 75%;
     }
 }
-
-@keyframes animation3 {
+    @keyframes animation3 {
     0% {
         width: 0;
         margin-left: -5%;
     }
 
     100% {
-        width: 60%;
+        width: 65%;
     }
 }`
     document.body.appendChild(styleKeyframes)
-    document.getElementById('aboutSection').addEventListener("mouseleave",()=>{
-         styleKeyframes.textContent = '';
+    document.getElementById('aboutSection').addEventListener("mouseleave", () => {
+        styleKeyframes.textContent = '';
     })
 })
 
@@ -68,7 +68,31 @@ ajoutAnimation.addEventListener('click',()=>{
 const voirPlus = document.getElementById("voirPlus");
 const progressBar2 = document.getElementById("progressBar2");
 
-voirPlus.addEventListener("click",()=>{
-  voirPlus.textContent = voirPlus.textContent === 'Voir Plus' ? 'Voir Moins' : 'Voir Plus' ;
-   progressBar2.style.display = progressBar2.style.display === 'none' ? 'block' : 'none';
+voirPlus.addEventListener("click", () => {
+    voirPlus.textContent = voirPlus.textContent === 'Voir Plus' ? 'Voir Moins' : 'Voir Plus';
+    progressBar2.style.display = progressBar2.style.display === 'none' ? 'block' : 'none';
+})
+
+
+// MODE NUIT
+const modeNuit = document.getElementById("modeNuit");
+const formations = document.getElementById("formations");
+const aboutSection = document.getElementById("aboutSection");
+const contactSection = document.getElementById("contactSection");
+const body = document.body;
+
+modeNuit.addEventListener("click", () => {
+    body.classList.toggle("mode-nuit");
+    formations.classList.toggle("section-dark");
+    aboutSection.classList.toggle("section-dark");
+    contactSection.classList.toggle("section-dark");
+
+    if (body.classList.contains("mode-nuit")) {
+        modeNuit.classList.replace("fa-toggle-off", "fa-toggle-on");
+    }
+
+    else {
+        modeNuit.classList.replace("fa-toggle-on", "fa-toggle-off");
+    }
+
 })
